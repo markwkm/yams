@@ -18,5 +18,6 @@ decorator==3.3.0
 nose==1.0.0
 psycopg2==2.3.2
 pysqlite==2.6.0
+pytz==2011e
 simplejson==2.1.3
 uuid==1.30
