@@ -34,7 +34,7 @@ psql -U ${COLLECTD_USER} -d ${COLLECTD_DB} \
 # Alter user details.
 psql -U ${COLLECTD_USER} -d ${COLLECTD_DB} \
 		-c "ALTER USER ${COLLECTD_USER}
-			SET default_tablespace TO '${COLLECTD_TBLSPACE}';"
+			SET default_tablespace TO '${COLLECTD_TBLSPACE}';" || exit 1
 psql -U ${WUI_USER} -d ${COLLECTD_DB} \
 		-c "ALTER USER ${WUI_USER}
 			SET search_path TO \"\$user\",${COLLECTD_USER},public;" || exit 1
