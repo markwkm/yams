@@ -34,7 +34,7 @@ The WUI is an application built on Pyramid using Flotr2.
 * hiredis 0.9.2
 * json-c 0.10
 * nginx 1.2
-* PostgreSQL 9.2 with json_enhancements extension
+* PostgreSQL 9.3
 * Pyramid 1.4
 * Redis 2.2
 * spawn-fcgi 1.6

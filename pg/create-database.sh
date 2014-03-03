@@ -14,7 +14,6 @@ createdb --owner=${COLLECTD_USER} collectd "YAMS Data Warehouse"
 
 psql -v ON_ERROR_STOP=1 -d ${COLLECTD_DB} << $$
 CREATE EXTENSION hstore;
-CREATE EXTENSION json_enhancements;
 CREATE EXTENSION plr;
 
 -- Create the schemas.
