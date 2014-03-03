@@ -2,13 +2,19 @@ PREFIX= /usr/local
 INSTALL_BIN= $(PREFIX)/bin
 INSTALL= cp -p
 
+INCLUDEDIR := $(shell pg_config --includedir)
+CFLAGS := -I$(INCLUDEDIR)
+
+LIBDIR := $(shell pg_config --libdir)
+LDFLAGS := -L$(LIBDIR)
+
 all: yams-etl yams-etl-fcgi
 
 yams-etl: yams-etl.c Makefile
 	cc -g -Wall ${CFLAGS} -o $@ $< -lfcgi -lhiredis -ljson -lpq -lpthread
 
 yams-etl-fcgi: yams-etl-fcgi.c Makefile
-	cc -g -Wall -o $@ $< -lfcgi -lhiredis
+	cc -g -Wall ${LDFLAGS} -o $@ $< -lfcgi -lhiredis
 
 clean:
 	rm -f yams-etl yams-etl-fcgi

@@ -64,7 +64,6 @@ if [ ! -f "${DONEFILE}" ]; then
 	cp -p /usr/local/src/yams/examples/collectd/types.db.postgresql \
 			/opt/collectd/etc/types.db.postgresql || exit 1
 
-	export CFLAGS=-I/usr/include/postgresql
 	(cd /usr/local/src/yams/etl && make install) || exit 1
 
 	# Database setup
