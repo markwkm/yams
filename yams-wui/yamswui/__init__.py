@@ -16,7 +16,10 @@ def main(global_config, **settings):
     Base.metadata.bind = engine
     my_session_factory = UnencryptedCookieSessionFactoryConfig('yams')
     config = Configurator(settings=settings, session_factory=my_session_factory)
+
     config.add_static_view('static', 'static', cache_max_age=3600)
+    config.add_static_view('js', 'js', cache_max_age=3600)
+
     config.add_route('add_source', '/add_source')
     config.add_route('chart', '/chart')
     config.add_route('clear_sources', '/clear_sources')
